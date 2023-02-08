@@ -1,0 +1,100 @@
+.gridbox {
+    margin: auto;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+.container {
+    position: relative;
+    /* width: 300px; */
+    /* border: 1px solid red; */
+    border-radius: 30px;
+}
+.container > div {
+ height: 300px;
+ /* border: 1px solid blue; */
+}
+.image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+  }
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    /* border: 1px solid pink; */
+    border-radius: 0px 0px 30px 30px;
+    opacity: 0.6;
+  }
+  
+  .container:hover .overlay {
+    height: 30%;
+    /* border: 5px solid green; */
+    cursor: pointer;
+  }
+  
+  .text {
+    color: black;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .second {
+    display: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+  }
+
+  .container > div:hover > .image{
+    display: none;
+  }
+  .container > div:hover > .second{
+    display: block;
+   
+  }
+
+  .flex {
+    display: flex;
+    gap: 20px;
+
+  }
+  button {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+  }
+  .first {
+     text-decoration: line-through;
+  }
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    .gridbox {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media all and (min-width: 320px) and (max-width: 767px) {
+  .gridbox {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
